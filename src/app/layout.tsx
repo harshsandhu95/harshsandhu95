@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
+import RootProvider from "@/components/RootProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,14 +8,18 @@ export const metadata: Metadata = {
   description: "Harsh Sandhu is a Frontend Developer & Designer based in India who loves to build beautiful and functional websites.",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
-}: Readonly<React.PropsWithChildren<{}>>) {
+}: Readonly<React.PropsWithChildren<{}>>) => {
   return (
     <html lang="en">
       <body>
-        {children}
+        <RootProvider>
+          {children}
+        </RootProvider>
       </body>
     </html>
   );
 }
+
+export default RootLayout;
