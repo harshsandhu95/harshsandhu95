@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import React from "react";
 import RootProvider from "@/components/RootProvider";
+import { cn } from "@/lib/utils";
+import { sans_font } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,8 +14,8 @@ const RootLayout = ({
   children,
 }: Readonly<React.PropsWithChildren<{}>>) => {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn("py-12 sm:py-24 px-6 mx-auto max-w-2xl", sans_font.variable)}>
         <RootProvider>
           {children}
         </RootProvider>
