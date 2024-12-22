@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   description: "Harsh Sandhu is a Frontend Developer & Designer based in India who loves to build beautiful and functional websites.",
 };
 
-const RootLayout = ({
-  children,
-}: Readonly<React.PropsWithChildren<{}>>) => {
+interface Props extends React.PropsWithChildren {};
+
+const RootLayout = ({ children }: Readonly<Props>) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("py-12 sm:py-24 px-6 mx-auto max-w-2xl", sans_font.variable)}>

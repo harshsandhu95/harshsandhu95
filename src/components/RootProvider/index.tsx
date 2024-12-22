@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 
-const RootProvider = ({ children }: React.PropsWithChildren<{}>) => {
+const RootProvider = ({ children }: React.PropsWithChildren) => {
   return (
     <ThemeProvider
       attribute="class"
