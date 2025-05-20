@@ -13,9 +13,9 @@ const BLUR_FADE_DELAY = 0.04;
 
 const Home = () => {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="py-24 container flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
+        <div className="mx-auto w-full space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFadeText
@@ -176,18 +176,19 @@ const Home = () => {
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 14}>
             <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.hackathons.map((project, id) => (
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {DATA.hackathons.map((hackathon: any, id: number) => (
                 <BlurFade
-                  key={project.title + project.dates}
+                  key={hackathon.title + hackathon.dates}
                   delay={BLUR_FADE_DELAY * 15 + id * 0.05}
                 >
                   <HackathonCard
-                    title={project.title}
-                    description={project.description}
-                    location={project.location}
-                    dates={project.dates}
-                    image={project.image}
-                    links={project.links}
+                    title={hackathon.title}
+                    description={hackathon.description}
+                    location={hackathon.location}
+                    dates={hackathon.dates}
+                    image={hackathon.image}
+                    links={hackathon.links}
                   />
                 </BlurFade>
               ))}
