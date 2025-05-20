@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import RootProvider from "@/components/providers";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { fontSans } from "@/lib/fonts";
+import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Harsh Sandhu | Software Engineer & Entrepreneur",
@@ -15,8 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
-        <RootProvider>{children}</RootProvider>
+      <body className={cn("font-sans antialiased", fontSans.className)}>
+        <RootProvider>
+          {children}
+          <Toaster />
+          <Navbar />
+        </RootProvider>
       </body>
     </html>
   );
